@@ -103,17 +103,19 @@ The image is built for the following architectures:
 
 To pull a specific architecture, use the following format:
 
-```bash 
+``
+bash 
 docker pull --platform=<architecture> ghcr.io/pycqa/bandit/bandit:latest
-```
+``
 
 Every image is signed with sigstore cosign and it is possible to verify the
 source of origin using the following cosign command:
 
-```bash
+```
+bash
 cosign verify ghcr.io/pycqa/bandit/bandit:py39-amd64 \
-  --certificate-identity https://github.com/pycqa/bandit/.github/workflows/build-publish-image.yml@refs/tags/<version> \
-  --certificate-oidc-issuer https://token.actions.githubusercontent.com
+--certificate-identity https://github.com/pycqa/bandit/.github/workflows/build-publish-image.yml@refs/tags/<version> \
+--certificate-oidc-issuer https://token.actions.githubusercontent.com
 ```
 
 Where `<version>` is the release version of Bandit.
